@@ -17,10 +17,11 @@ function solution(A) {
         for (let i = 1; i < numOfPeaks; i++) {
             if (peaks[i] - last >= flags) {
                 count++;
+                if (count >= flags) return true;
                 last = peaks[i];
             }
         }
-        if (count >= flags) return true;
+        
         return false;
     };
     
